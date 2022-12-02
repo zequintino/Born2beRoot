@@ -67,18 +67,9 @@ Some of the differences between CentOS and Debian:
 
     [SELinux overview](https://www.redhat.com/en/topics/linux/what-is-selinux#overview)
 
-* **AppArmor** is a Linux application security system. It proactively protects the OS and applications against external and internal attacks. Debian already ships with this application. To check its status simply run the command `aa-status` on your terminal.
+* **AppArmor** is a Linux application security system. It proactively protects the OS and applications against external and internal attacks. Debian already ships with this application. To check its status simply run the command ```aa-status``` on your terminal.
 
     [AppArmor overview](https://apparmor.net)
-
-
-
-```
-
-
-
-```
-
 
 
 * **SSH** (Secure Shell) protocol is a software package that enables secure system administration and file transfers over insecure networks. It ships standard on UNIX, Linux and macOS machines. It works on the client/server-model. The **SSH** client always initiates the  setup of the secure connection and the **SSH** server listens for incoming connection requests (usually on TCP port 22 on the host system) and responds to them. _Regarding the project we want this service to be running on port 4242 only! And, for security reasons it must not be possible to connect using **SSH** as root._
