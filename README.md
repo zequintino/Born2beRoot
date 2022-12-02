@@ -1,8 +1,10 @@
+<!-- Output copied to clipboard! -->
+
 <!-----
 
 Yay, no errors, warnings, or alerts!
 
-Conversion time: 0.288 seconds.
+Conversion time: 0.289 seconds.
 
 
 Using this Markdown file:
@@ -15,13 +17,11 @@ Using this Markdown file:
 Conversion notes:
 
 * Docs to Markdown version 1.0β33
-* Fri Dec 02 2022 06:54:31 GMT-0800 (PST)
+* Fri Dec 02 2022 08:32:15 GMT-0800 (PST)
 * Source doc: Born2beRoot Design Doc
+* This is a partial selection. Check to make sure intra-doc links work.
 ----->
 
-
-
-```copy this shit```
 
 
 # Born2beRoot useful documentation
@@ -70,9 +70,18 @@ Some of the differences between CentOS and Debian:
 
     [SELinux overview](https://www.redhat.com/en/topics/linux/what-is-selinux#overview)
 
-* **AppArmor** is a Linux application security system. It proactively protects the OS and applications against external and internal attacks. Debian already ships with this application. To check its status simply run the command ``aa-status`` on your terminal.
+* **AppArmor** is a Linux application security system. It proactively protects the OS and applications against external and internal attacks. Debian already ships with this application. To check its status simply run the command `aa-status` on your terminal.
 
     [AppArmor overview](https://apparmor.net)
+
+
+
+```
+
+
+
+```
+
 
 
 * **SSH** (Secure Shell) protocol is a software package that enables secure system administration and file transfers over insecure networks. It ships standard on UNIX, Linux and macOS machines. It works on the client/server-model. The **SSH** client always initiates the  setup of the secure connection and the **SSH** server listens for incoming connection requests (usually on TCP port 22 on the host system) and responds to them. _Regarding the project we want this service to be running on port 4242 only! And, for security reasons it must not be possible to connect using **SSH** as root._
@@ -84,7 +93,7 @@ Some of the differences between CentOS and Debian:
 
 
 
-* **UFW** **(Uncomplicated Firewall)** makes it easier to handle security on Linux which can be done with **Iptables**. Since handling **Iptables** can be quite hard (same for its learning curve), **UFW** makes things way easier to manage, with or without **GUI**. Regarding the project, it must be active as the default firewall when you launch your VM.
+* **UFW (Uncomplicated Firewall)** makes it easier to handle security on Linux which can be done with **Iptables**. Since handling **Iptables** can be quite hard (same for its learning curve), **UFW** makes things way easier to manage, with or without **GUI**. Regarding the project, it must be active as the default firewall when you launch your VM.
 
     [UFW overview](https://www.linux.com/training-tutorials/introduction-uncomplicated-firewall-ufw/)
 
@@ -93,3 +102,13 @@ Some of the differences between CentOS and Debian:
 
 
     [Iptables wiki](https://pt.wikipedia.org/wiki/Iptables)
+
+
+
+## Objectives
+
+
+
+1. Install the OS image using VirtualBox and setup the following partitions (these are the ones needed for the bonus part)
+
+
