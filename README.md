@@ -68,7 +68,9 @@ Some of the differences between CentOS and Debian:
     [SELinux overview](https://www.redhat.com/en/topics/linux/what-is-selinux#overview)
 
 * **AppArmor** is a Linux application security system. It proactively protects the OS and applications against external and internal attacks. Debian already ships with this application. To check its status simply run the command
-```aa-status```
+
+``aa-status``
+
 on your terminal.
 
     [AppArmor overview](https://apparmor.net)
