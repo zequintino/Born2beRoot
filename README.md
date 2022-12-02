@@ -67,7 +67,9 @@ Some of the differences between CentOS and Debian:
 
     [SELinux overview](https://www.redhat.com/en/topics/linux/what-is-selinux#overview)
 
-* **AppArmor** is a Linux application security system. It proactively protects the OS and applications against external and internal attacks. Debian already ships with this application. To check its status simply run the command ```aa-status``` on your terminal.
+* **AppArmor** is a Linux application security system. It proactively protects the OS and applications against external and internal attacks. Debian already ships with this application. To check its status simply run the command
+```aa-status```
+on your terminal.
 
     [AppArmor overview](https://apparmor.net)
 
@@ -81,7 +83,7 @@ Some of the differences between CentOS and Debian:
 
 
 
-* **UFW** **(Uncomplicated Firewall) **makes it easier to handle security on Linux which can be done with **Iptables**. Since handling **Iptables** can be quite hard (same for its learning curve), **UFW** makes things way easier to manage, with or without **GUI**. Regarding the project, it must be active as the default firewall when you launch your VM.
+* **UFW** **(Uncomplicated Firewall)** makes it easier to handle security on Linux which can be done with **Iptables**. Since handling **Iptables** can be quite hard (same for its learning curve), **UFW** makes things way easier to manage, with or without **GUI**. Regarding the project, it must be active as the default firewall when you launch your VM.
 
     [UFW overview](https://www.linux.com/training-tutorials/introduction-uncomplicated-firewall-ufw/)
 
