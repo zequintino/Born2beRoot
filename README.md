@@ -91,34 +91,34 @@ Some differences between CentOS and Debian:
 ## Objectives
 
 1. Install the OS image using VirtualBox and set up the partitions as suggested by the subject.
-2. The **hostname** of your virtual machine must be your login ending with 42 (_jquintin42_ for me). You have to be able to modify your **hostname **later.
+2. The **hostname** of your virtual machine must be your login ending with 42 (_jquintin42_ for me). You have to be able to modify your **hostname** later.
 3. Strong password policy regarding **root** and **user** passwords (don’t forget to write down your passwords somewhere). You have to be able to change all the passwords accounts present on the virtual machine, including the root account.
-* Password has to expire every 30 days.
-* Minimum number of days allowed before the modification of a password will be set to 2.
-* User has to receive a warning message 7 days before their password expires.
-* Password must be at least 10 characters long. An <span style="text-decoration:underline;">uppercase letter</span>, <span style="text-decoration:underline;">lowercase letter</span> and a <span style="text-decoration:underline;">number</span> must be included. Password must not contain more than 3 consecutive identical characters.
-* It must not include the name of the user.
-* **THIS ONE DOES NOT APPLY TO THE ROOT PASSWORD**: Password must have at least 7 characters that are not part of the former (**root**) password.
+	* Password has to expire every 30 days.
+	* Minimum number of days allowed before the modification of a password will be set to 2.
+	* User has to receive a warning message 7 days before their password expires.
+	* Password must be at least 10 characters long. An <span style="text-decoration:underline;">uppercase letter</span>, <span style="text-decoration:underline;">lowercase letter</span> and a <span style="text-decoration:underline;">number</span> must be included. Password must not contain more than 3 consecutive identical characters.
+	* It must not include the name of the user.
+	* **THIS ONE DOES NOT APPLY TO THE ROOT PASSWORD**: Password must have at least 7 characters that are not part of the former (**root**) password.
 4. Install and configure **sudo** following strict rules.
 5. Besides the root user, create a user with your login as username.
 6. Create two new groups: **user42** and **sudo**. The user you created at step 5 must be included in these two new groups. Later, you have to be able to create a user and add it to a group. **sudo **group has to comply with the following requirements:
-* Auth using **sudo **has to be limited to 3 attempts in case of incorrect password.
-* A custom message has to be displayed if there’s an error due to the wrong password when using **sudo**.
-* Each action using **sudo **has to be archived, both inputs and outputs. The **log file **has to be saved in the `/var/log/sudo` folder.
-* The **TTY **mode has to be enabled (security reasons).
-* For security reasons as well, paths that can be used by **sudo** must be restricted: `/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin`
+	* Auth using **sudo **has to be limited to 3 attempts in case of incorrect password.
+	* A custom message has to be displayed if there’s an error due to the wrong password when using **sudo**.
+	* Each action using **sudo **has to be archived, both inputs and outputs. The **log file **has to be saved in the `/var/log/sudo` folder.
+	* The **TTY** mode has to be enabled (security reasons).
+	* For security reasons as well, paths that can be used by **sudo** must be restricted: `/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin`
 7. Install the **SSH** service on your OS. SSH will only run on port **4242**. It must not be possible to connect using **SSH** as root (this is due to security reasons). SSH will be tested by setting up a new account.
 8. Setup UFW firewall and only leave port 4242 open. Firewall must be active when launching your virtual machine.
 9. Create a **bash** script to monitor your virtual machine. It must be named **monitoring.sh**. At server startup the script will display some info on all terminals every 10 minutes. Check `wall` command, **banner** is optional and no errors must be visible. You need to explain how the script works and be able to interrupt it without modifying it (check **cron**). Script must always display the following info:
-* **Architecture **of your OS and its **kernel** version.
-* Number of **physical processors**.
-* Number of **virtual processors**.
-* Available **RAM** on your VM and its utilization rate as percentage.
-* Available **memory** on your VM and its utilization rate as percentage.
-* Utilization of your **processors** as percentage.
-* **Date and time** of the **last reboot**.
-* Whether **LVM** is active or not.
-* Number of **active connections**.
-* Number of **users using the VM**.
-* **IPV4 address** of your VM and its **MAC address**.
-* Number of commands executed with the **sudo** program.
+	* **Architecture** of your OS and its **kernel** version.
+	* Number of **physical processors**.
+	* Number of **virtual processors**.
+	* Available **RAM** on your VM and its utilization rate as percentage.
+	* Available **memory** on your VM and its utilization rate as percentage.
+	* Utilization of your **processors** as percentage.
+	* **Date and time** of the **last reboot**.
+	* Whether **LVM** is active or not.
+	* Number of **active connections**.
+	* Number of **users using the VM**.
+	* **IPV4 address** of your VM and its **MAC address**.
+	* Number of commands executed with the **sudo** program.
