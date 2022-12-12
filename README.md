@@ -102,7 +102,7 @@ Some differences between CentOS and Debian:
 4. Besides the root user, create a user with your login as username.
 5. Install and configure **sudo** following strict rules.
 6. Create two new groups: **user42** and **sudo**. The user you created at step 5 must be included in these two new groups. Later, you have to be able to create a user and add it to a group. **sudo **group has to comply with the following requirements:
-	* Auth using **sudo **has to be limited to 3 attempts in case of incorrect password.
+	* Auth using **sudo** has to be limited to 3 attempts in case of incorrect password.
 	* A custom message has to be displayed if there’s an error due to the wrong password when using **sudo**.
 	* Each action using **sudo** has to be archived, both inputs and outputs. The **log file** has to be saved in the `/var/log/sudo` folder.
 	* The **TTY** mode has to be enabled (security reasons).
