@@ -99,12 +99,12 @@ Some differences between CentOS and Debian:
 	* Password must be at least 10 characters long. An <span style="text-decoration:underline;">uppercase letter</span>, <span style="text-decoration:underline;">lowercase letter</span> and a <span style="text-decoration:underline;">number</span> must be included. Password must not contain more than 3 consecutive identical characters.
 	* It must not include the name of the user.
 	* **THIS ONE DOES NOT APPLY TO THE ROOT PASSWORD**: Password must have at least 7 characters that are not part of the former (**root**) password.
-4. Install and configure **sudo** following strict rules.
-5. Besides the root user, create a user with your login as username.
+4. Besides the root user, create a user with your login as username.
+5. Install and configure **sudo** following strict rules.
 6. Create two new groups: **user42** and **sudo**. The user you created at step 5 must be included in these two new groups. Later, you have to be able to create a user and add it to a group. **sudo **group has to comply with the following requirements:
 	* Auth using **sudo **has to be limited to 3 attempts in case of incorrect password.
 	* A custom message has to be displayed if there’s an error due to the wrong password when using **sudo**.
-	* Each action using **sudo **has to be archived, both inputs and outputs. The **log file **has to be saved in the `/var/log/sudo` folder.
+	* Each action using **sudo** has to be archived, both inputs and outputs. The **log file** has to be saved in the `/var/log/sudo` folder.
 	* The **TTY** mode has to be enabled (security reasons).
 	* For security reasons as well, paths that can be used by **sudo** must be restricted: `/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin`
 7. Install the **SSH** service on your OS. SSH will only run on port **4242**. It must not be possible to connect using **SSH** as root (this is due to security reasons). SSH will be tested by setting up a new account.
