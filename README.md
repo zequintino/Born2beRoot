@@ -101,7 +101,7 @@ Some differences between CentOS and Debian:
 	* **THIS ONE DOES NOT APPLY TO THE ROOT PASSWORD**: Password must have at least 7 characters that are not part of the former (**root**) password.
 4. Besides the root user, create a user with your login as username.
 5. Install and configure **sudo** following strict rules.
-6. Create two new groups: **user42** and **sudo**. The user you created at step 5 must be included in these two new groups. Later, you have to be able to create a user and add it to a group. **sudo **group has to comply with the following requirements:
+6. Create two new groups: **user42** and **sudo**. The user you created at step 4 must be included in these two new groups. Later, you have to be able to create a user and add it to a group. **sudo** group has to comply with the following requirements:
 	* Auth using **sudo** has to be limited to 3 attempts in case of incorrect password.
 	* A custom message has to be displayed if there’s an error due to the wrong password when using **sudo**.
 	* Each action using **sudo** has to be archived, both inputs and outputs. The **log file** has to be saved in the `/var/log/sudo` folder.
@@ -122,3 +122,11 @@ Some differences between CentOS and Debian:
 	* Number of **users using the VM**.
 	* **IPV4 address** of your VM and its **MAC address**.
 	* Number of commands executed with the **sudo** program.
+
+***
+5. Change to root: `su` || install sudo: `apt-get install sudo`
+6. Command `groups` shows all the groups that the current user belongs to. To check a particular **_user_** use `groups [username]`
+	* To check which users belong to a certain group type in `getent group [group-name]`. `getent group` displays all groups and coressponding users
+	* Creating a new group: `groupadd [options] [group-name]`
+	* Adding a user to a group: `adduser [username] [group-name]`
+
