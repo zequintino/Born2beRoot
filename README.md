@@ -124,9 +124,14 @@ Some differences between CentOS and Debian:
 	* Number of commands executed with the **sudo** program.
 
 ***
-5. Change to root: `su` || install sudo: `apt-get install sudo`
+5. Change to root: `su` or to some user `su -l [username]` || install sudo: `apt-get install sudo`
 6. Command `groups` shows all the groups that the current user belongs to. To check a particular **_user_** use `groups [username]`
 	* To check which users belong to a certain group type in `getent group [group-name]`. `getent group` displays all groups and coressponding users
 	* Creating a new group: `groupadd [options] [group-name]`
 	* Adding a user to a group: `adduser [username] [group-name]`
-
+	* Adding a new user: `adduser [username]`
+	* Command `visudo`to enter into **_sudoers.tmp_** and customize as needed
+		* Regarding 3 tries **_Auth_** type the following: `Defaults	passwd_tries=3`
+		* Custom message for failed tries can be set as: `Defaults	badpass_message="[custom-message]"` or `Defaults	insults`. You cannot customize the latter one
+		* Create a **_sudo_** folder whintin /var/log/ and redirect the **log file** to this folder <-
+		* **TTY** "_Teletypewriter_" prints the name of the terminal that you're using <-
