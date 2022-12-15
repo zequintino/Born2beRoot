@@ -133,5 +133,8 @@ Some differences between CentOS and Debian:
 	* Command `visudo`to enter into **_sudoers.tmp_** and customize as needed
 		* Regarding 3 tries **_Auth_** type the following: `Defaults	passwd_tries=3`
 		* Custom message for failed tries can be set as: `Defaults	badpass_message="[custom-message]"` or `Defaults	insults`. You cannot customize the latter one
-		* Create a **_sudo_** folder whintin /var/log/ and redirect the **log file** to this folder <-
-		* **TTY** "_Teletypewriter_" prints the name of the terminal that you're using <-
+		* Create a **_sudo_** folder whintin **_/var/log/_**. In **_/var/log/sudo/_** create a new log file: `touch [filename].log`. Redirecting **_sudo_** actions to the log file:
+		* **TTY** "_Teletypewriter_" prints the name of the terminal that you're using. `Defaults	requiretty`
+		* In `visudo` **secure_path**, change to this: `Defaults	secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/sbin:/bin:/snap/bin"`
+		* `visudo`-> `Defaults	syslog=local1` || `nano /etc/rsyslog.conf` -> `local1.*	/var/log/sudo.log` add it before **_auth,authpriv.*;local1.none_** (this seems good for the project)
+			* ALT OPT: `visudo`-> `Deafults	log_output`& `Defaults	log_input` || redirect with: `Defaults	iolog_dir=/var/log/sudo/sudoio.log`
