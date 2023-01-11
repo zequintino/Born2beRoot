@@ -134,7 +134,12 @@ Some differences between CentOS and Debian:
 		* Regarding 3 tries **_Auth_** type the following: `Defaults	passwd_tries=3`
 		* Custom message for failed tries can be set as: `Defaults	badpass_message="[custom-message]"` or `Defaults	insults`. You cannot customize the latter one
 		* Create a **_sudo_** folder whintin **_/var/log/_**. In **_/var/log/sudo/_** create a new log file: `touch [filename].log`. Redirecting **_sudo_** actions to the log file:
+			* `visudo`-> `Defaults	syslog=local1` || `nano /etc/rsyslog.conf` -> `local1.*	/var/log/sudo.log` add it before **_auth,authpriv.*;local1.none_** (this seems good for the project)
+			* ALT OPT: `visudo`-> `Deafults	log_output`& `Defaults	log_input` || redirect with: `Defaults	iolog_dir=/var/log/sudo/sudoio.log`
 		* **TTY** "_Teletypewriter_" prints the name of the terminal that you're using. `Defaults	requiretty`
 		* In `visudo` **secure_path**, change to this: `Defaults	secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/sbin:/bin:/snap/bin"`
-		* `visudo`-> `Defaults	syslog=local1` || `nano /etc/rsyslog.conf` -> `local1.*	/var/log/sudo.log` add it before **_auth,authpriv.*;local1.none_** (this seems good for the project)
-			* ALT OPT: `visudo`-> `Deafults	log_output`& `Defaults	log_input` || redirect with: `Defaults	iolog_dir=/var/log/sudo/sudoio.log`
+7. I installed the **_SSH_** service during the **_Debian_** installation but you can do typing: `apt install openssh-server`.
+	* Regarding port **_4242_** and forbidding **_root_** access: `nano /etc/ssh/sshd_config` | change **_Port 22_** to `Port 4242`. Where you see **_PermitRootLogin	prohibit-password_** go with `PermitRootLogin	no`. to check SSH status go with `systemctl status ssh`
+	* On **_Network_** setting at the virtual machine mude the adapter to **_bridge adapter_**
+8. Install UFW `apt-get install ufw` and then `ufw enable` and `ufw allow 4242`. `ufw status` to check status.
+9. Install Net-tools `apt-get install net-tools` check ip with `ip a` try to connect remotely with `ssh jquintin@[ip] -p 4242`
